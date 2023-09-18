@@ -2,7 +2,7 @@ name: Snyk
 
 on:
   workflow_call:
-
+jobs:
   SCA:
     runs-on: ubuntu-latest
     steps:
