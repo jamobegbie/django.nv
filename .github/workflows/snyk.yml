@@ -2,6 +2,7 @@ name: Snyk
 
 on:
   workflow_call:
+  workflow_dispatch:
 jobs:
   SCA:
     runs-on: ubuntu-latest
