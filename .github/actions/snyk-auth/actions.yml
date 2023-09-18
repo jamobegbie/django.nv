@@ -1,13 +1,17 @@
-name: Auth Snyk
-
+# jamobegbie/django.nv/.github/actions/snyk-action/action.yml
+name: 'Snyk Action'
+description: 'Run Snyk checks'
 inputs:
   snyk-token:
+    description: 'Snyk authentication token'
     required: true
-    type: string
 runs:
   using: composite
   steps:
-    - name:  Snyk auth
+    - name: Run Snyk
       run: |
         echo ${{ inputs.snyk-token }} | snyk auth --stdin
+        snyk test --json
+      shell: bash
+
       
