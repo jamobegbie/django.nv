@@ -2,21 +2,7 @@ name: Snyk
 
 on:
   workflow_call:
-jobs:
-  scan:
-    name: Snyk Scan Microservice
-    runs-on: ubuntu latest
 
-    steps:
-      - name: checkout sca
-        uses: actions/checkout@v2
-
-      - uses: jamobegbie/django.nv/.github/actions/snyk-auth/actions.yml@main
-        with:
-          snyk-token: ${{ secrets.SNYK_TOKEN }}
-      - name: SCA
-        uses: snyk/actions/gradle@master
-        continue-on-error: true
   SCA:
     runs-on: ubuntu-latest
     steps:
